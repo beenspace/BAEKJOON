@@ -1,0 +1,14 @@
+num = int(input())
+
+for i in range(num):
+  H, W, N = map(int, input().split())
+  # H는 호텔 층수, W는 룸 수, N은 손님 수
+  
+  floor = N % H # 손님 수를 층수로 나눈 나머지
+  room = N // H + 1 # 룸 배정은 손님 수를 층 수로 나누고 거기에 1을 더함
+
+    if floor == 0: # 나머지가 0 즉, floor는 0층이 아닌 H층으로 바꿈
+    room -= 1 # 룸 번호는 -1 해줌
+    floor = H
+    
+print(floor*100 + room)
