@@ -1,0 +1,20 @@
+N = input()
+nums = map(int,input().split()
+count = 0
+
+for i in nums:
+  if i == 1: # nums에 입력받은 수가 1이면 
+  
+      continue #1은 소수가 아니므로 루프에서 다음수로 넘김
+      
+  for j in range(2, i): # i 까지인 이유 --> 자신의 수까지 오면 안댐 즉 자신의 수 - 1 까지
+  
+      if i % j == 0: # 본인 i 이외의 수로 나눠서 나머지가 0 이면  소수가 아니기 때문
+      
+        break # 이 경우 반복문 탈출
+        
+  else: # 그 외의 경우 1과 자기자신만으로 나눠지는 소수임
+  
+    count += 1 # 해당 경우 카운트
+    
+print(count)
