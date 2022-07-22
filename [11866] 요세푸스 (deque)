@@ -1,0 +1,15 @@
+from collections import deque
+
+a, b = map(int,input().split())
+que = deque(range(1,a+1))
+result = []
+
+while que:
+    for j in range(b-1):            # [1 2 3 4 5 6 7] range : 0 1 순환
+        que.append(que.popleft())   # [3 4 5 6 7 1 2] 순환을 통해 앞에 [0, 1]번 인덱스 뒤로
+    result.append(que.popleft())    # result list에 que 맨 앞 인덱스 추가 ex) 3
+                                    # while 더 돌면, [4 5 6 7 1 2]로 시작하니까 4, 5 뒤로가고 6 pop
+                                    # 또 돌면, [7 1 2 4 5] 2 pop 또 돌면, [4 5 7 1] 7 pop
+                                    # 돌면, [1 4 5] 5 pop 또 돌면, [1 4] 1 pop
+                                    
+print(str(result).replace('[', '<').replace(']', '>'))
