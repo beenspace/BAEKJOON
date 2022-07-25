@@ -1,0 +1,10 @@
+n = int(input()) ## 256
+result = 0
+
+for i in range(1, n+1): ## 1 ~ 256
+    tmp = i + sum(map(int,str(i))) ## i = 245 일때 str(245)
+    
+    if tmp == n: ## n과 같으면 
+        result = i ## i를 결과값으로
+        break
+print(result)
