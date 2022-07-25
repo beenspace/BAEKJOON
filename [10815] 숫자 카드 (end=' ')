@@ -1,0 +1,12 @@
+import sys
+n = int(sys.stdin.readline())
+data1 = set(map(int, input().split())) # 6 3 2 10 -10
+m = int(sys.stdin.readline())
+data2 = (list(map(int, sys.stdin.readline().split())))
+for i in data2: 
+    if i in data1:
+        print(1, end=' ')
+    else:
+        print(0, end=' ')
+            
+## end = ' ' 조건 공부! ##          
