@@ -1,0 +1,12 @@
+import sys
+a, b = map(int,sys.stdin.readline().split()) 
+
+lis = list(map(int, sys.stdin.readline().split())) # 5 4 3 2 1
+num = [0]
+sum = 0
+for i in lis:
+    sum += i
+    num.append(sum) # 0 5 9 12 14 15
+for i in range(b): 
+    c, d = map(int,sys.stdin.readline().split()) 
+    print(num[d] - num[c-1]) 
