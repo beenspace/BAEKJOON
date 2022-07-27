@@ -1,0 +1,24 @@
+N = int(input())
+num_1 = list(map(int, input().split()))
+num_1.sort()
+M = int(input())
+num_2 = list(map(int, input().split()))
+
+for i in num_2:
+    left, right = 0, len(num_1) - 1
+    check = False
+    
+    while True:
+        mid = (left + right)//2
+        if i == num_1[mid]:
+            check = True
+            print(1)
+            break
+        elif i > num_1[mid]:
+            left = mid + 1
+        elif i < num_1[mid]:
+            right = mid - 1
+        if left > right:
+            break
+    if check == False:
+        print(0)
