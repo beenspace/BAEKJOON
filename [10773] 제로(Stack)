@@ -1,0 +1,11 @@
+k = int(input())
+stack = []
+for i in range(k):
+    
+    get = int(input())
+    if get != 0:
+        stack.append(get)
+    elif get == 0:
+        stack.pop()
+        
+print(sum(stack))
